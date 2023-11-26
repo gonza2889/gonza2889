@@ -18,11 +18,13 @@
 
 
 <script>
-  var plantumlCode = "@startuml\nAlice -> Bob: Hola\n@enduml";
-
-  var url = PlantUML.getEncodedUrl(plantumlCode);
-  var img = document.createElement("img");
-  img.src = url;
-
-  document.getElementById("diagrama-plantuml").appendChild(img);
+  // var plantumlCode = "@startuml\nAlice -> Bob: Hola\n@enduml";
+  // var url = PlantUML.getEncodedUrl(plantumlCode);
+  // var img = document.createElement("img");
+  // img.src = url;
+  // document.getElementById("diagrama-plantuml").appendChild(img);
+  
+  var plantumlEncoder = require('plantuml-encoder')
+  var encoded = plantumlEncoder.encode('A -> B: Hello')
+  console.log(encoded)
 </script>
