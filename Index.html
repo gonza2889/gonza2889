@@ -1,1 +1,28 @@
 <h1>Pruebas</h1>
+
+<script src="https://cdn.jsdelivr.net/npm/plantuml-encoder@1.4.0/browser-index.min.js"></script>
+
+
+<div>
+  <h2> Diagrama de ejemplo </h2>
+  <div id="diagrama-plantuml"></div>
+</div>
+
+
+<style>
+  #diagrama-plantuml img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+
+<script>
+  var plantumlCode = "@startuml\nAlice -> Bob: Hola\n@enduml";
+
+  var url = PlantUML.getEncodedUrl(plantumlCode);
+  var img = document.createElement("img");
+  img.src = url;
+
+  document.getElementById("diagrama-plantuml").appendChild(img);
+</script>
